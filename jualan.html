@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jualan.css">
+    <link rel="stylesheet" href="jualan-size-hp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      document.addEventListener( 'DOMContentLoaded', function () {
+        new Splide( '#image-carousel' ).mount();
+      } );
+    </script>
+</head>
+<body>
+    
+<nav id="nav">
+        <div class="container flex">
+          <!-- <img src="chatgpt.png" /> -->
+          <div class="links">
+            <a href="#"> <i class="fi fi-bs-chart-simple-horizontal"></i> API</a>
+            <a href="#Research"> <i class="fi fi-bs-search"></i> Research</a>
+            <a href="#blog"> <i class="fi fi-bs-blog-text"></i> Blog</a>
+            <a href="#"> <i class="fi fi-rs-info"></i> About</a>
+          </div>
+        </div>
+</nav>
+
+<div class="container">
+    <div class="inputBox">
+        <div class="countNumber">
+            <button id="minusButton" onclick="decreaseFood()">-</button>
+                <input type="number" id="counter" value="0" disabled>
+            <button id="plusButton" onclick="increaseFood()">+</button> 
+        </div>
+    
+        <div class="container-makanan">
+            <label for="foodPrice">total harga makanan <i class="fi fi-ss-tags"></i> </label>
+            <input type="number" id="foodPrice" placeholder="Harga Makanan" disabled>
+            <h5>
+                box ini berkelipatan tiap angka yang di masukkan
+            </h5>
+        </div> 
+    </div>
+    <div class="struk-outer">
+        <div class="text-purchase">
+            <h6>
+                history purchase <i class="fi fi-bs-cart-arrow-down"></i>
+            </h6>
+        </div>
+        <div class="struk">
+            <div id="purchaseList" class="purchase-list" data-tooltip="yakin di hapus?"></div>
+        </div> 
+    </div>
+</div>
+<div class="section-class">
+  <section id="Research" class="research-class">
+    <h1>
+      Research
+    </h1>
+    <div class="card-shifer">
+        <div class="gambar-network">
+          <img src="network.png" alt="">
+        </div>
+        <div class="text-box">
+          <p>
+            kami terus ber inovasi di bidang teknologi dan bisnis serta membantu masyarakat umkm dengan berbagai sistem pengkondisian
+          </p>
+        </div>
+    </div>
+  </section>
+
+  <!-- <section id="blog" class="blog-class">
+    <h1>
+      blog news
+    </h1>
+    <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img src="DSC08584.JPG" alt="">
+            <div>
+              <h2>
+                isi makanan
+              </h2>
+            </div>
+          </li>
+          <li class="splide__slide">
+            <img src="DSC08584 - Copy (2).JPG" alt="">
+          </li>
+          <li class="splide__slide">
+            <img src="DSC08584 - Copy.JPG" alt="">
+          </li>
+        </ul>
+      </div>
+    </section>
+  </section> -->
+</div>
+
+<section id="image-carousel" class="splide" aria-label="Beautiful Images">
+  <div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">
+				<img src="DSC08584.JPG" alt="">
+			</li>
+			<li class="splide__slide">
+				<img src="DSC08584 - Copy (2).JPG" alt="">
+			</li>
+			<li class="splide__slide">
+				<img src="DSC08584 - Copy.JPG" alt="">
+			</li>
+		</ul>
+  </div>
+</section>
+
+<div class="splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide">Slide 01</li>
+      ...
+    </ul>
+  </div>
+  
+  <!-- Add the progress bar element -->
+  <div class="my-slider-progress">
+    <div class="my-slider-progress-bar"></div>
+  </div>
+</div>
+
+<script>
+const nav = document.querySelector("#nav");
+
+const onScroll = (event) => {
+  const scrollPosition = event.target.scrollingElement.scrollTop;
+  if (scrollPosition > 10) {
+    if (!nav.classList.contains("scrolled-down")) {
+      nav.classList.add("scrolled-down");
+    }
+  } else {
+    if (nav.classList.contains("scrolled-down")) {
+      nav.classList.remove("scrolled-down");
+    }
+  }
+};
+
+document.addEventListener("scroll", onScroll);
+
+let clickCount = 0;
+const foodPrice = 5000; // Harga makanan (ganti sesuai kebutuhan)
+
+function increaseFood() {
+  clickCount += 1;
+  updateFood();
+}
+
+function decreaseFood() {
+  if (clickCount > 0) {
+    clickCount -= 1;
+    updateFood();
+  }
+}
+
+function updateFood() {
+  const counter = document.getElementById("counter");
+  const foodPriceInput = document.getElementById("foodPrice");
+  const purchaseList = document.getElementById("purchaseList");
+
+  counter.value = clickCount;
+  foodPriceInput.value = clickCount * foodPrice;
+
+  if (clickCount > 0) {
+    const purchaseItem = document.createElement("div");
+    purchaseItem.className = "delete-button";
+    purchaseItem.innerHTML = `<i class="fas fa-trash"></i>  Makanan x ${clickCount} - Harga: ${clickCount * foodPrice}`;
+    purchaseList.appendChild(purchaseItem);
+    purchaseItem.addEventListener("click", function() {
+      deletePurchase(purchaseItem);
+    });
+  }
+}
+
+function deletePurchase(purchaseItem) {
+  const purchaseList = document.getElementById("purchaseList");
+  purchaseList.removeChild(purchaseItem);
+  clickCount = Math.max(clickCount - 500, 0);
+  updateFood();
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    updateFood();
+  }
+});
+
+// Fungsi untuk memutar bunyi beep
+function playBeepSound() {
+  const beepAudio = new Audio("beep.mp3"); // Ganti dengan URL file audio beep Anda
+  beepAudio.play();
+}
+
+// Ambil referensi tombol
+const beepButton = document.getElementById("minusButton");
+
+
+// Tambahkan event listener untuk tombol
+beepButton.addEventListener("click", playBeepSound);
+
+// Fungsi untuk memutar bunyi beep
+function playBeepSound() {
+  const beepAudio = new Audio("beep.mp3"); // Ganti dengan URL file audio beep Anda
+  beepAudio.play();
+}
+
+// Ambil referensi tombol
+const beepaddButton = document.getElementById("plusButton");
+
+
+// Tambahkan event listener untuk tombol
+beepaddButton.addEventListener("click", playBeepSound);
+
+// Fungsi untuk memutar bunyi beep
+function playBeepSound() {
+  const beepAudio = new Audio("beep.mp3"); // Ganti dengan URL file audio beep Anda
+  beepAudio.play();
+}
+
+// Ambil referensi tombol
+const beepdelButton = document.getElementById("purchaseList");
+
+
+// Tambahkan event listener untuk tombol
+beepdelButton.addEventListener("click", playBeepSound);
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "+") {
+      increaseFood(purchaseList);
+      playBeepSound();
+    } else if (event.key === "-") {
+      decreaseFood(purchaseList);
+      playBeepSound();
+    }
+  });
+
+  new Splide( '#image-carousel' ).mount();
+
+  var splide = new Splide( '.splide' );
+  var bar    = splide.root.querySelector( '.my-carousel-progress-bar' );
+  
+  // Updates the bar width whenever the carousel moves:
+  splide.on( 'mounted move', function () {
+    var end  = splide.Components.Controller.getEnd() + 1;
+    var rate = Math.min( ( splide.index + 1 ) / end, 1 );
+    bar.style.width = String( 100 * rate ) + '%';
+  } );
+  
+  splide.mount();
+</script>
+
+</body>
+</html>
