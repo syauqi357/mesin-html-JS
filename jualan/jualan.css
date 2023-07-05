@@ -1,0 +1,301 @@
+* {
+  font-family: 'Staatliches', cursive;
+}
+
+html {
+    background-color: #ECF0F1;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 56px;
+    background: #20262E;
+    transition: 0.3s;
+  }
+  
+  a {
+    text-decoration: none;
+    color: azure;
+    transition: all ease-in-out 0.2s;
+  }
+
+  a:hover {
+    color: rgb(207, 39, 39);
+  }
+
+  nav.scrolled-down {
+    height: 80px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.14);
+  }
+  
+  nav.scrolled-down img {
+    scale: 1.25;
+  }
+  
+  .links {
+    display: flex;
+    gap: 16px;
+  }
+  
+  nav img {
+    width: 24px;
+    height: 24px;
+    transform-origin: 0% 50%;
+    transition: 0.3s;
+  }
+  
+  .container {
+    margin: 0 10%;
+    width: 80%;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.container {
+    margin: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-makanan {
+    color: #ECF0F1;
+    padding: 17px;
+}
+
+.inputBox {
+    margin: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.struk {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    scroll-behavior: smooth;
+    height: 400px;
+    width: 270px;
+    border-radius: 12px;
+    background-color: #34495E;
+}
+
+.struk-outer {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-purchase {
+    color: #333;
+    font-size: 33px;
+    transition: all ease-in-out 0.3s;
+    margin: auto;
+    margin-bottom: 4px;
+}
+
+.text-purchase:hover {
+    font-size: 36px;
+}
+
+.container-makanan {
+    padding: 45px;
+    height:200px;
+    width: 300px;
+    background-color: #34495E;
+    margin: 15px;
+    border: none;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+}
+
+.countNumber {
+    padding: 45px;
+    height: 47px;
+    width: 300px;
+    background-color: #34495E;
+    margin: 15px;
+    border: none;
+    border-radius: 13px;
+    
+}
+
+#foodPrice {
+    border: none;
+    border-radius: 3px;
+    height: 48px;
+    width: 245px;
+    padding-left: 12px;
+    font-size: 28px;
+    background-color: #343434;
+    color: rgb(16, 210, 61);
+    font-family: 'Staatliches', cursive;
+}
+
+#counter {
+    height: 56px;
+    width: 50px;
+    border: none;
+    border-radius: 4px;
+    background-color: #313131;
+    color: rgb(4, 198, 78);
+    font-size: 42px;
+    font-family: 'Staatliches', cursive;
+}
+
+#minusButton {
+    background: #FBCA1F;
+    font-family: inherit;
+    padding: 0.3em 0.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.1em;
+    box-shadow: 0.1em 0.1em;
+    font-size: 25px;
+
+}
+
+#minusButton:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+#minusButton:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+#plusButton {
+    background: #FBCA1F;
+    font-family: inherit;
+    padding: 0.3em 0.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.1em;
+    box-shadow: 0.1em 0.1em;
+    font-size: 25px;
+}
+
+#plusButton:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+#plusButton:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .delete-button {
+    background: #FBCA1F;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    justify-content: center;
+    width: 150px;
+    margin: 15px;
+    transition: all ease-in-out 0.1s;
+  }
+  
+  .delete-button::after {
+    content: attr(data-tooltip); /* Isi tooltip dengan teks dari atribut data-tooltip */
+    display: none; /* Sembunyikan tooltip secara default */
+    position: absolute; /* Posisi tooltip secara absolut */
+    top: 100%; /* Atur jarak antara card dengan tooltip */
+    left: 50%; /* Geser tooltip ke tengah card */
+    transform: translateX(-50%); /* Geser tooltip lebih tepat ke tengah card */
+    padding: 5px 10px; /* Padding untuk tooltip */
+    background-color: #333; /* Warna latar belakang tooltip */
+    color: #fff; /* Warna teks tooltip */
+    border-radius: 5px; /* Border radius untuk tooltip */
+    font-size: 14px; /* Ukuran font untuk tooltip */
+  }
+
+  .delete-button:hover::after {
+    display: block;
+  }
+  .delete-button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+    background-color: rgb(255, 51, 51);
+  }
+  
+  .delete-button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
+
+  .research-class {
+    background-color: #ccc;
+    height: 350px;
+    margin: 0px;
+    padding: 28px;
+  }
+
+  .blog-class {
+    background-color: #ffffffdd;
+    height: 650px;
+    margin: 0px;
+    padding: 28px;
+  }
+
+  .splide__slide img {
+    width: 520px;
+    height: 420px;
+    object-fit: cover;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .my-slider-progress {
+    background: #ccc;
+  }
+  
+  .my-slider-progress-bar {
+    background: greenyellow;
+    height: 2px;
+    transition: width 400ms ease;
+    width: 0;
+  }
+
+  .gambar-network img {
+    width: 257px;
+    height: 257px;
+    object-fit: cover;
+    justify-content: center;
+  }
+
+  .card-shifter {
+    display: block;
+    flex-direction: row;
+  }
+
+  .text-box {
+    
+  }
